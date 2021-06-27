@@ -12,6 +12,8 @@ import { ContactComponent } from './components/forms/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './modules/materials/materials.module';
 import { MainpageComponent } from './components/forms/mainpage/mainpage.component';
+import { NavbarComponent } from './components/general/navbar/navbar.component';
+import { FooterComponent } from './components/general/footer/footer.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { MainpageComponent } from './components/forms/mainpage/mainpage.componen
     PersonalComponent,
     ContactComponent,
     MainpageComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     FormsModule,
