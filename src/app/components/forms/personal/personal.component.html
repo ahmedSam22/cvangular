@@ -1,0 +1,35 @@
+<div class="container">
+    <form action="submit" [formGroup]="data.personalData" class="form">
+        <h3>Basic information </h3>
+        <div class="row">
+            <label for="fullname" class="form__label  col-md-6 col-sm-12 col-12">
+                Full name :
+                <input type="text" formControlName="fullname" class="form-control ">
+            </label>
+            <label for="birthDay" class="form__label  col-md-6 col-sm-12 col-12">
+                birthday :
+                <input type="text" formControlName="birthDay" class="form-control">
+            </label>
+            <label for="jobtitle" class="form__label  col-md-6 col-sm-12 col-12">
+                Job Title :
+                <input type="text" formControlName="jobtitle" class="form-control">
+            </label>
+        </div>
+        <form formArrayName="address" class="inside--form">
+            <h3>Adresses</h3>
+            <div class="row">
+                <label for="street" class=" inside--form__label col-md-6 col-sm-12 col-12" >
+                    <input type="text" *ngFor="let item of data.address.controls;let i=index" formControlName="street" class="form-control mb-2" [formControlName]="i">
+                    <button class="btn btn-warning mt-2" (click)="data.addaddress()">add new address</button>
+                </label>
+            </div>
+        </form>
+
+    </form>
+    <div>
+        <h3 class="mt-3">Contacts</h3>
+        <app-contact></app-contact>
+
+    </div>
+<button (click)="data.submit()">test </button>
+</div>
