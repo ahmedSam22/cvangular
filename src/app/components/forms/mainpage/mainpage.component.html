@@ -1,17 +1,18 @@
 <div class="container">
     <mat-horizontal-stepper>
 
-    <mat-step label="Personal data">
-        <app-personal></app-personal>
-        <button mat-button matStepperNext>next</button>
-    </mat-step>
-    <mat-step label="Personal data">
-        <app-contact></app-contact>
-        <button mat-button matStepperPrevious>prev</button>
-        <button mat-button matStepperNext>next</button>
-    </mat-step>
-    <mat-step>
-        three
-    </mat-step>
-</mat-horizontal-stepper>
+        <mat-step label="Personal data">
+            <app-personal></app-personal>
+            <button mat-button matStepperNext>next</button>
+        </mat-step>
+        <mat-step label="Personal data">
+            <app-contact></app-contact>
+            <button mat-button matStepperPrevious>prev</button>
+            <button mat-button matStepperNext>next</button>
+        </mat-step>
+        <mat-step label="Personal data">
+            <app-experience></app-experience>
+            <button mat-button matStepperPrevious>prev</button>
+        </mat-step>
+    </mat-horizontal-stepper>
 </div>

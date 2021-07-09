@@ -14,6 +14,7 @@ import { MaterialsModule } from './modules/materials/materials.module';
 import { MainpageComponent } from './components/forms/mainpage/mainpage.component';
 import { NavbarComponent } from './components/general/navbar/navbar.component';
 import { FooterComponent } from './components/general/footer/footer.component';
+import { ExperienceComponent } from './components/forms/experience/experience.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FooterComponent } from './components/general/footer/footer.component';
     MainpageComponent,
     NavbarComponent,
     FooterComponent,
+    ExperienceComponent,
   ],
   imports: [
     FormsModule,

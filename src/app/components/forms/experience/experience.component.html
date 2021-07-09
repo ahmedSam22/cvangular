@@ -1,0 +1,115 @@
+<!--
+
+<div class="container">
+    <form action="submit" [formGroup]="data.experience" class="form">
+        <h3>Experience</h3>
+        <form action="" formArrayName="full" *ngFor="let item of data.full.controls;let i=index" >
+
+<form action=""  [formGroupName]="i">
+    <div class="row">
+        <label for="fullname" class="form__label  col-md-6 col-sm-12 col-12">
+            Company name :
+            <input class="form-control" type="text" formControlName="company" class="form-control ">
+        </label>
+        <label for="birthDay" class="form__label  col-md-6 col-sm-12 col-12">
+            Location :
+            <input class="form-control" type="text" formControlName="location" class="form-control">
+        </label>
+        <label for="jobtitle" class="form__label  col-md-6 col-sm-12 col-12">
+            starts in :
+            <input class="form-control" type="date" id="start" name="trip-start" formControlName="start" min="2018-01-01"
+                max="2018-12-31">
+        </label>
+        <label for="jobtitle" class="form__label  col-md-6 col-sm-12 col-12">
+            Ends in :
+            <input class="form-control" type="date" id="start" name="trip-start" formControlName="end" min="2018-01-01"
+                max="2018-12-31"> </label>
+    </div>
+    <form formArrayName="description" class="inside--form">
+        <h3>Description</h3>
+        <div class="row">
+            <label for="street" class=" inside--form__label col-md-6 col-sm-12 col-12">
+                <input class="form-control" type="text" formControlName="description" class="form-control mb-2">
+                <button class="btn btn-warning mt-2" >add new address</button>
+            </label>
+        </div>
+    </form>
+</form>
+
+
+        </form>
+
+
+    </form>
+    <button (click)="submit()">test</button>
+</div>
+
+
+
+-->
+
+
+<form [formGroup]="data.experience" (ngSubmit)="data.onSubmit()">
+
+    <div formArrayName="details" *ngFor="let employee of data.details().controls; let expindex=index">
+        <div [formGroupName]="expindex" class="row">
+            <label for="Company" class="col-md-6 col-sm-12 col-12">
+                company name :
+            <input class="form-control" type="text" formControlName="company">
+            </label>
+            
+            <label for="location" class="col-md-6 col-sm-12 col-12">
+                Location:
+
+                <input class="form-control" type="text" formControlName="location">
+            </label>
+
+            <label for="start" class="col-md-6 col-sm-12 col-12">
+                starts in:
+
+                <input class="form-control" type="text" formControlName="start">
+            </label>
+
+            <label for="end" class="col-md-6 col-sm-12 col-12">
+                ends in:
+                <input class="form-control" type="text" formControlName="end">
+            </label>
+            
+             <label  class="col-md-6 col-sm-12 col-12">
+                <button (click)="data.removeexp(expindex)" class="btn btn-warning w-auto mt-3">Remove</button>
+
+            </label>
+            <div formArrayName="skills">
+
+                <div *ngFor="let skill of data.skills(expindex).controls; let skillIndex=index">
+
+                    <div [formGroupName]="skillIndex">
+
+                        <label for="z" class="col-md-6 col-sm-12 col-12">
+                            Skill :
+            
+                            <input class="form-control" type="text" formControlName="skill">
+                        </label>
+
+                        <label for="Skill" class="col-md-6 col-sm-12 col-12">
+                            Exp:
+                            <input class="form-control" type="text" formControlName="exp">
+                        </label>
+                        
+                        
+
+                        <button (click)="data.removeEmployeeSkill(expindex,skillIndex)" class="btn btn-warning col-md-12 w-auto mt-3 text-right">Remove</button>
+
+                    </div>
+
+                </div>
+                <button type="button" (click)="data.addEmployeeSkill(expindex)" class="btn btn-warning col-md-12 w-auto mt-3 text-right">Add Skill</button>
+
+            </div>
+        </div>
+
+    </div>
+    <button type="button" (click)="data.addexp()" class="btn btn-warning col-md-12 w-auto mt-3 text-right">Add Employee</button>
+    <button (click)="data.onSubmit()" class="btn btn-success col-md-12 w-auto mt-3 text-right">test</button>
+
+</form>
