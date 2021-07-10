@@ -15,6 +15,7 @@ import { MainpageComponent } from './components/forms/mainpage/mainpage.componen
 import { NavbarComponent } from './components/general/navbar/navbar.component';
 import { FooterComponent } from './components/general/footer/footer.component';
 import { ExperienceComponent } from './components/forms/experience/experience.component';
+import { EducationComponent } from './components/forms/education/education.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ExperienceComponent } from './components/forms/experience/experience.co
     NavbarComponent,
     FooterComponent,
     ExperienceComponent,
+    EducationComponent,
   ],
   imports: [
     FormsModule,

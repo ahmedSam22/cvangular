@@ -1,0 +1,16 @@
+<form class="example-form" [formGroup]="data.education">
+    <input type="text"
+           placeholder="Search for a degree"
+           [matAutocomplete]="auto"
+           [(ngModel)]="data.filtervalue" 
+           name="data.filtervalue"
+           formControlName="degree"
+           >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let item of data.autocompletefilter()" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-autocomplete>
+  </form>
+
+  <button (click)=submit()>test</button>
