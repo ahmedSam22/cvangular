@@ -31,12 +31,13 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 // Material Popups & Modals
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 // Material Data tables
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -55,6 +56,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatSliderModule,
     MatSlideToggleModule,
+    MatNativeDateModule,
     MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,

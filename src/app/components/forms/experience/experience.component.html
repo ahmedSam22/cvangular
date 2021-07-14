@@ -67,43 +67,37 @@
             <label for="start" class="col-md-6 col-sm-12 col-12">
                 starts in:
 
-                <input class="form-control" type="text" formControlName="start">
+                <input class="form-control" type="date" formControlName="start">
             </label>
 
             <label for="end" class="col-md-6 col-sm-12 col-12">
                 ends in:
-                <input class="form-control" type="text" formControlName="end">
+                <input class="form-control"  type="date" formControlName="end">
             </label>
             
              <label  class="col-md-6 col-sm-12 col-12">
                 <button (click)="data.removeexp(expindex)" class="btn btn-warning w-auto mt-3">Remove</button>
 
             </label>
-            <div formArrayName="skills">
+            <div formArrayName="descriptions">
 
-                <div *ngFor="let skill of data.skills(expindex).controls; let skillIndex=index">
+                <div *ngFor="let description of data.descriptions(expindex).controls; let descriptionIndex=index">
 
-                    <div [formGroupName]="skillIndex">
+                    <div [formGroupName]="descriptionIndex">
 
                         <label for="z" class="col-md-6 col-sm-12 col-12">
-                            Skill :
+                            Job Description :
             
-                            <input class="form-control" type="text" formControlName="skill">
+                            <input class="form-control" type="text" formControlName="description">
                         </label>
 
-                        <label for="Skill" class="col-md-6 col-sm-12 col-12">
-                            Exp:
-                            <input class="form-control" type="text" formControlName="exp">
-                        </label>
                         
-                        
-
-                        <button (click)="data.removeEmployeeSkill(expindex,skillIndex)" class="btn btn-warning col-md-12 w-auto mt-3 text-right">Remove</button>
+                        <button (click)="data.removeEmployeedescription(expindex,descriptionIndex)" class="btn btn-warning col-md-12 w-auto mt-3 text-right">Remove</button>
 
                     </div>
 
                 </div>
-                <button type="button" (click)="data.addEmployeeSkill(expindex)" class="btn btn-warning col-md-12 w-auto mt-3 text-right">Add Skill</button>
+                <button type="button" (click)="data.addEmployeedescription(expindex)" class="btn btn-warning col-md-12 w-auto mt-3 text-right">Add New Line</button>
 
             </div>
         </div>

@@ -1,16 +1,50 @@
 <form class="example-form" [formGroup]="data.education">
-    <input type="text"
-           placeholder="Search for a degree"
+  <div class="row">
+    <label class="col-md-6 col-sm-12 col-12">
+      School Name : 
+<input type="text" class="form-control" formControlName="schoolname">
+
+    </label>
+    <label class="col-md-6 col-sm-12 col-12">
+      City : 
+<input type="text" class="form-control" formControlName="city">
+
+    </label>
+    <label class="col-md-6 col-sm-12 col-12">
+      select a degree : 
+<input type="text"
            [matAutocomplete]="auto"
            [(ngModel)]="data.filtervalue" 
            name="data.filtervalue"
            formControlName="degree"
+           class="form-control"
            >
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let item of data.autocompletefilter()" [value]="item">
         {{item}}
       </mat-option>
     </mat-autocomplete>
+    </label>
+
+    <label class="col-md-6 col-sm-12 col-12">
+      Field Of Study : 
+<input type="text" class="form-control" formControlName="field">
+
+    </label>
+
+    <label class="col-md-6 col-sm-12 col-12">
+      Graduation Start Date : 
+        <input formControlName="start" type="date" class="form-control">
+     
+    </label>
+
+    <label class="col-md-6 col-sm-12 col-12">
+      Graduation End Date : 
+        <input formControlName="end" type="date" class="form-control">
+     
+    </label>
+  </div>
+    
   </form>
 
   <button (click)=submit()>test</button>

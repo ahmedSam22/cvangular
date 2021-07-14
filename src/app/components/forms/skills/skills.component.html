@@ -1,0 +1,12 @@
+<div action="" [formGroup]="data.skills">
+<form formArrayName="skill" >
+    <label *ngFor="let item of data.skill.controls; let skillindex=index" class="col-md-12 col-sm-12 col-12 my-2" >
+        Skill  {{skillindex}}
+        <input type="text" class="form-control" formControlName="skill" [formControlName]="skillindex">
+        <button class="btn" (click)="data.removeSkill(skillindex)">remove</button>
+
+    </label>
+</form>
+    <button class="btn" (click)="submit()">test</button>
+    <button class="btn" (click)="data.addSkills()">add</button>
+</div>

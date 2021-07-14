@@ -16,6 +16,8 @@ import { NavbarComponent } from './components/general/navbar/navbar.component';
 import { FooterComponent } from './components/general/footer/footer.component';
 import { ExperienceComponent } from './components/forms/experience/experience.component';
 import { EducationComponent } from './components/forms/education/education.component';
+import { SkillsComponent } from './components/forms/skills/skills.component';
+import { CoursesComponent } from './components/forms/courses/courses.component';
 
 
 @NgModule({
@@ -29,10 +31,11 @@ import { EducationComponent } from './components/forms/education/education.compo
     FooterComponent,
     ExperienceComponent,
     EducationComponent,
+    SkillsComponent,
+    CoursesComponent,
   ],
   imports: [
     FormsModule,
-    
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,MaterialsModule,

@@ -73,8 +73,8 @@ export class AlldataService {
       location: '',
       start: '',
       end: '',
-      skills: this.fb.array([
-        this.newSkill()
+      descriptions: this.fb.array([
+        this.newdescription()
       ])
     })
   }
@@ -87,55 +87,138 @@ export class AlldataService {
     this.details().removeAt(expindex);
   }
 
-  skills(expindex: number): FormArray {
-    return this.details().at(expindex).get("skills") as FormArray
+  descriptions(expindex: number): FormArray {
+    return this.details().at(expindex).get("descriptions") as FormArray
   }
 
-  newSkill(): FormGroup {
+  newdescription(): FormGroup {
     return this.fb.group({
-      skill: '',
-      exp: '',
+      description: '',
     })
   }
 
-  addEmployeeSkill(expindex: number) {
-    this.skills(expindex).push(this.newSkill());
+  addEmployeedescription(expindex: number) {
+    this.descriptions(expindex).push(this.newdescription());
   }
 
-  removeEmployeeSkill(expindex: number, skillIndex: number) {
-    this.skills(expindex).removeAt(skillIndex);
+  removeEmployeedescription(expindex: number, descriptionIndex: number) {
+    this.descriptions(expindex).removeAt(descriptionIndex);
   }
 
   onSubmit() {
-    console.log(this.experience.value);
+    console.log(this.experience.value.details);
   }
   /*  -------- end experience ----------*/
 
 
   /*  -------- start education ----------*/
 
-  degrees: any[] = ['Professional Certificate', 'Undergraduate Degrees', 'Bachelor Degree', 'Master Degree','Doctoral Degree'];
-  filtervalue:any= ""
+  degrees: any[] = ['Professional Certificate', 'Undergraduate Degrees', 'Bachelor Degree', 'Master Degree', 'Doctoral Degree'];
+  filtervalue: any = ""
 
-  
- education = new FormGroup({
-  degree : new FormControl("")
-})
 
-  
+  education = new FormGroup({
+    schoolname: new FormControl(""),
+    city: new FormControl(""),
+    degree: new FormControl(""),
+    field: new FormControl(""),
+    start: new FormControl(Date),
+    end: new FormControl(""),
+  })
+
+
   autocompletefilter() {
     var filtering = new RegExp(this.filtervalue, 'i');
-    return this.degrees.filter(function(el){
+    return this.degrees.filter(function (el) {
       return el.match(filtering)
     })
 
   }
 
- 
-
-
-  
   /*  -------- end education ----------*/
+
+
+
+
+
+  /*  -------- start skills ----------*/
+
+
+
+  skills= this.fb.group({
+    skill : this.fb.array([
+      this.fb.control("")
+    ])
+    
+})
+
+  get skill(){
+    return this.skills.get("skill") as FormArray
+  }
+
+
+  addSkills(){
+    this.skill.push(this.fb.control(""))
+  }
+  removeSkill(skillindex: number) {
+    this.skill.removeAt(skillindex);
+  }
+
+  /*  -------- end skills ----------*/
+
+
+
+
+  /*  -------- start courses & hoppies ----------*/
+
+  courses= this.fb.group({
+    course : this.fb.array([
+      this.fb.control("")
+    ])
+    
+})
+
+  get course(){
+    return this.courses.get("course") as FormArray
+  }
+
+
+  addCourse(){
+    this.course.push(this.fb.control(""))
+  }
+  removeCourse(courseIndex: number) {
+    this.course.removeAt(courseIndex);
+  }
+
+
+
+  hoppies= this.fb.group({
+    hoppy : this.fb.array([
+      this.fb.control("")
+    ])
+    
+})
+
+  get hoppy(){
+    return this.hoppies.get("hoppy") as FormArray
+  }
+
+
+  addHoppy(){
+    this.hoppy.push(this.fb.control(""))
+  }
+  removeHoppy(hoppyindex: number) {
+    this.hoppy.removeAt(hoppyindex);
+  }
+
+
+
+
+  /*  -------- end courses & hoppies ----------*/
+
+
+
+
 
 }
 
