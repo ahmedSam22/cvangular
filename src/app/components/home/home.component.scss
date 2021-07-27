@@ -1,8 +1,39 @@
-.header{
-    text-align: baseline;
-    height: 50vh;
-    padding-top: auto;
+.home--header__body{
     display: flex;
     align-items: center;
-    justify-content: center;
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+
+    }
+    &__text{
+        padding: 0;
+        h1{
+            color: gray;
+            font-size: 40px;
+        }
+        &__utilities{
+            ul{
+                list-style: none;
+                padding-left: 0;
+                li{
+                    margin-bottom: 15px;
+                    font-size: 22px;
+                    color: gray;
+                    i{
+                        color: white;
+                        margin-right: 5px;
+                        background-color: green;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__image{
+        img{
+            width: 100%;
+        }
+        margin-bottom: 10px;
+
+    }
 }

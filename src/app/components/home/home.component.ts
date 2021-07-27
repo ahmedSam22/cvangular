@@ -13,12 +13,13 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
     const target = document.querySelector('.tw')
     const writer = new Typewriter(target, {
       loop: true,
       typeSpeed: 80,
       deleteSpeed: 80,
-      typeColor: 'red'
+      typeColor: 'blue'
     })
     
     writer

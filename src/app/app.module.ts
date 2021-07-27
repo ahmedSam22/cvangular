@@ -18,7 +18,7 @@ import { ExperienceComponent } from './components/forms/experience/experience.co
 import { EducationComponent } from './components/forms/education/education.component';
 import { SkillsComponent } from './components/forms/skills/skills.component';
 import { CoursesComponent } from './components/forms/courses/courses.component';
-
+import { CheckdataComponent } from './components/pages/checkdata/checkdata.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { CoursesComponent } from './components/forms/courses/courses.component';
     EducationComponent,
     SkillsComponent,
     CoursesComponent,
+    CheckdataComponent,
   ],
   imports: [
     FormsModule,

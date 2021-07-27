@@ -16,6 +16,6 @@ export class PersonalComponent implements OnInit {
   ngOnInit(): void {
   }
 submit(){
-  console.log(this.data.personalData.value)
+  console.log(this.data.personalData.controls)
 }
 }
