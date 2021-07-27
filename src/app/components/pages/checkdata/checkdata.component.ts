@@ -9,8 +9,10 @@ import { AlldataService } from 'src/app/services/alldata.service';
 export class CheckdataComponent implements OnInit {
 
   constructor(public data : AlldataService) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {  
+  
   }
-
+     expindex(){
+      return this.data.experience.value.details.length - 1
+    }
 }
