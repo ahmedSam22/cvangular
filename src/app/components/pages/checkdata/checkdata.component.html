@@ -4,8 +4,12 @@
             <h1 class="text-center">
                 Data Review </h1>
             <hr>
+
+            <!-- start personal data  -->
+
             <div class="check--data__body">
                 <h3 class="text-center">personalData</h3>
+
                 <div class="check--data__body__personaldata">
                     <ul>
                         <li *ngFor="let item of this.data.personalData.value | keyvalue"> {{item.key}} : {{item.value}}
@@ -13,6 +17,11 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- end personal data  -->
+
+
+            <!-- start contact -->
 
             <div class="check--data__body">
                 <h3 class="text-center">contact </h3>
@@ -22,14 +31,36 @@
                     </ul>
                 </div>
             </div>
+            <!-- end contact -->
+
+            <!-- start experience -->
+
+
             <div class="check--data__body">
                 <h3 class="text-center">Experience </h3>
                 <div class="check--data__body__exp">
-                    <ul *ngFor="let item of this.data.experience.value.details ; let expindex = index" >
-                        <li *ngFor="let y of this.data.experience.value.details[expindex]  | keyvalue"> {{y.key}} : {{y.value}}</li>
+                    <ul *ngFor="let item of this.data.experience.value.details  ; let expindex = index ">
+
+                        <li
+                            *ngFor="let y of this.data.experience.value.details[expindex] | omit: 'descriptions'| keyvalue">
+                            {{y.key}} :
+                            {{y.value}}
+                        </li>
+                        <li> <h3 class="mb-0"> descriptions </h3> </li>
+                            <ul *ngFor="let item of this.data.experience.value.details[expindex].descriptions  ; let test = index ">
+                                
+                                <li
+                                *ngFor="let y of this.data.experience.value.details[expindex].descriptions[test] | keyvalue">
+                                {{y.value}}
+                            </li>
+                            </ul>
+
                     </ul>
                 </div>
             </div>
+
+            <!-- end experience -->
+
 
         </div>
     </div>

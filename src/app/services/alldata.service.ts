@@ -145,19 +145,19 @@ export class AlldataService {
 
 
 
-  skills= this.fb.group({
-    skill : this.fb.array([
+  skills = this.fb.group({
+    skill: this.fb.array([
       this.fb.control("")
     ])
-    
-})
 
-  get skill(){
+  })
+
+  get skill() {
     return this.skills.get("skill") as FormArray
   }
 
 
-  addSkills(){
+  addSkills() {
     this.skill.push(this.fb.control(""))
   }
   removeSkill(skillindex: number) {
@@ -171,19 +171,19 @@ export class AlldataService {
 
   /*  -------- start courses & hoppies ----------*/
 
-  courses= this.fb.group({
-    course : this.fb.array([
+  courses = this.fb.group({
+    course: this.fb.array([
       this.fb.control("")
     ])
-    
-})
 
-  get course(){
+  })
+
+  get course() {
     return this.courses.get("course") as FormArray
   }
 
 
-  addCourse(){
+  addCourse() {
     this.course.push(this.fb.control(""))
   }
   removeCourse(courseIndex: number) {
@@ -192,19 +192,19 @@ export class AlldataService {
 
 
 
-  hoppies= this.fb.group({
-    hoppy : this.fb.array([
+  hoppies = this.fb.group({
+    hoppy: this.fb.array([
       this.fb.control("")
     ])
-    
-})
 
-  get hoppy(){
+  })
+
+  get hoppy() {
     return this.hoppies.get("hoppy") as FormArray
   }
 
 
-  addHoppy(){
+  addHoppy() {
     this.hoppy.push(this.fb.control(""))
   }
   removeHoppy(hoppyindex: number) {

@@ -19,6 +19,8 @@ import { EducationComponent } from './components/forms/education/education.compo
 import { SkillsComponent } from './components/forms/skills/skills.component';
 import { CoursesComponent } from './components/forms/courses/courses.component';
 import { CheckdataComponent } from './components/pages/checkdata/checkdata.component';
+import { NgPipesModule } from 'ngx-pipes';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { CheckdataComponent } from './components/pages/checkdata/checkdata.compo
   imports: [
     FormsModule,
     BrowserModule,
+    NgPipesModule,
     ReactiveFormsModule,
     AppRoutingModule,MaterialsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
