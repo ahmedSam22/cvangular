@@ -84,18 +84,28 @@
                 <h3 class="text-center">Skills </h3>
                 <div class="check--data__body__skills">
                     <ul>
-                        <li *ngFor="let item of this.data.skills.value | keyvalue"> {{item.key}} : {{item.value}} </li>
+                        <li>
+                            <h3 class="mb-0">
+                                Skills
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.skill.value">{{item}} </li>
                     </ul>
                 </div>
             </div>
             <!--  end skills  -->
 
-              <!--  start courses  -->
-              <div class="check--data__body">
+            <!--  start courses  -->
+            <div class="check--data__body">
                 <h3 class="text-center">courses </h3>
-                <div class="check--data__body__skills">
+                <div class="check--data__body__courses">
                     <ul>
-                        <li *ngFor="let item of this.data.courses.value | keyvalue"> {{item.key}} : {{item.value}} </li>
+                        <li>
+                            <h3 class="mb-0">
+                                Courses
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.course.value">{{item}} </li>
                     </ul>
                 </div>
             </div>
@@ -104,9 +114,14 @@
             <!--  start Hoppies  -->
             <div class="check--data__body">
                 <h3 class="text-center">Hoppies </h3>
-                <div class="check--data__body__skills">
+                <div class="check--data__body__hoppies">
                     <ul>
-                        <li *ngFor="let item of this.data.hoppies.value | keyvalue"> {{item.key}} : {{item.value}} </li>
+                        <li>
+                            <h3 class="mb-0">
+                                Hoppies
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.hoppy.value">{{item}} </li>
                     </ul>
                 </div>
             </div>
