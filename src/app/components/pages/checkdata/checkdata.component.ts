@@ -10,7 +10,6 @@ import { AlldataService } from 'src/app/services/alldata.service';
 
 })
 export class CheckdataComponent implements OnInit {
-
   constructor(public data : AlldataService , public WithoutPipe : WithoutPipe) { }
   sortExperience:any;
   ngOnInit(): void {  
@@ -18,4 +17,5 @@ export class CheckdataComponent implements OnInit {
   asIsOrder(a:any, b:any) {
     return a > b;
   }
+  
 }

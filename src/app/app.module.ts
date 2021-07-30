@@ -20,6 +20,7 @@ import { SkillsComponent } from './components/forms/skills/skills.component';
 import { CoursesComponent } from './components/forms/courses/courses.component';
 import { CheckdataComponent } from './components/pages/checkdata/checkdata.component';
 import { NgPipesModule } from 'ngx-pipes';
+import { SimpleComponent } from './components/templates/simple/simple.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { NgPipesModule } from 'ngx-pipes';
     SkillsComponent,
     CoursesComponent,
     CheckdataComponent,
+    SimpleComponent,
   ],
   imports: [
     FormsModule,
