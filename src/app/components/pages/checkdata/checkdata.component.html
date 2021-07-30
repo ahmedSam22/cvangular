@@ -46,14 +46,17 @@
                             {{y.key}} :
                             {{y.value}}
                         </li>
-                        <li> <h3 class="mb-0"> descriptions </h3> </li>
-                            <ul *ngFor="let item of this.data.experience.value.details[expindex].descriptions  ; let test = index ">
-                                
-                                <li
+                        <li>
+                            <h3 class="mb-0"> descriptions </h3>
+                        </li>
+                        <ul
+                            *ngFor="let item of this.data.experience.value.details[expindex].descriptions  ; let test = index ">
+
+                            <li
                                 *ngFor="let y of this.data.experience.value.details[expindex].descriptions[test] | keyvalue">
                                 {{y.value}}
                             </li>
-                            </ul>
+                        </ul>
 
                     </ul>
                 </div>
@@ -61,6 +64,53 @@
 
             <!-- end experience -->
 
+
+            <!-- start education -->
+
+
+            <div class="check--data__body">
+                <h3 class="text-center">Education </h3>
+                <div class="check--data__body__education">
+                    <ul>
+                        <li *ngFor="let item of this.data.education.value | keyvalue"> {{item.key}} : {{item.value}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end  education -->
+
+            <!--  start skills  -->
+            <div class="check--data__body">
+                <h3 class="text-center">Skills </h3>
+                <div class="check--data__body__skills">
+                    <ul>
+                        <li *ngFor="let item of this.data.skills.value | keyvalue"> {{item.key}} : {{item.value}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end skills  -->
+
+              <!--  start courses  -->
+              <div class="check--data__body">
+                <h3 class="text-center">courses </h3>
+                <div class="check--data__body__skills">
+                    <ul>
+                        <li *ngFor="let item of this.data.courses.value | keyvalue"> {{item.key}} : {{item.value}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end courses  -->
+
+            <!--  start Hoppies  -->
+            <div class="check--data__body">
+                <h3 class="text-center">Hoppies </h3>
+                <div class="check--data__body__skills">
+                    <ul>
+                        <li *ngFor="let item of this.data.hoppies.value | keyvalue"> {{item.key}} : {{item.value}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end Hoppies  -->
 
         </div>
     </div>

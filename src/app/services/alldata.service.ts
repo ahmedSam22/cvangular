@@ -122,7 +122,7 @@ export class AlldataService {
     city: new FormControl(""),
     degree: new FormControl(""),
     field: new FormControl(""),
-    start: new FormControl(Date),
+    start: new FormControl(""),
     end: new FormControl(""),
   })
 
