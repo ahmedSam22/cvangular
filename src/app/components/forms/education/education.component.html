@@ -1,50 +1,113 @@
-<form class="example-form" [formGroup]="data.education">
-  <div class="row">
-    <label class="col-md-6 col-sm-12 col-12">
-      School Name : 
-<input type="text" class="form-control" formControlName="schoolname">
+<!--  <form class="example-form" [formGroup]="data.education">
 
-    </label>
-    <label class="col-md-6 col-sm-12 col-12">
-      City : 
-<input type="text" class="form-control" formControlName="city">
+  <div formArrayName="details" *ngFor="let school of data.schools().controls; let expindex=index">
 
-    </label>
-    <label class="col-md-6 col-sm-12 col-12">
-      select a degree : 
-<input type="text"
-           [matAutocomplete]="auto"
-           [(ngModel)]="data.filtervalue" 
-           name="data.filtervalue"
-           formControlName="degree"
-           class="form-control"
-           >
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let item of data.autocompletefilter()" [value]="item">
-        {{item}}
-      </mat-option>
-    </mat-autocomplete>
-    </label>
 
-    <label class="col-md-6 col-sm-12 col-12">
-      Field Of Study : 
-<input type="text" class="form-control" formControlName="field">
+    <div class="row" [formGroupName]="expindex">
+      <label class="col-md-6 col-sm-12 col-12">
+        School Name :
+        <input type="text" class="form-control" formControlName="schoolname">
 
-    </label>
+      </label>
+      <label class="col-md-6 col-sm-12 col-12">
+        City :
+        <input type="text" class="form-control" formControlName="city">
 
-    <label class="col-md-6 col-sm-12 col-12">
-      Graduation Start Date : 
+      </label>
+      <label class="col-md-6 col-sm-12 col-12">
+        select a degree :
+        <input type="text" [matAutocomplete]="auto" [(ngModel)]="data.filtervalue" name="data.filtervalue"
+          formControlName="degree" class="form-control">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let item of data.autocompletefilter()" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-autocomplete>
+      </label>
+
+      <label class="col-md-6 col-sm-12 col-12">
+        Field Of Study :
+        <input type="text" class="form-control" formControlName="field">
+
+      </label>
+
+      <label class="col-md-6 col-sm-12 col-12">
+        Graduation Start Date :
         <input formControlName="start" type="date" class="form-control">
-     
-    </label>
 
-    <label class="col-md-6 col-sm-12 col-12">
-      Graduation End Date : 
+      </label>
+
+      <label class="col-md-6 col-sm-12 col-12">
+        Graduation End Date :
         <input formControlName="end" type="date" class="form-control">
-     
-    </label>
-  </div>
-    
-  </form>
 
-  <button (click)=submit()>test</button>
+      </label>
+    </div>
+  </div>
+
+
+
+
+</form>
+
+<button (click)="this.data.addschool()">add</button>
+
+<button (click)=submit()>test</button>
+   -->
+
+
+
+
+<form [formGroup]="data.education">
+
+  <div formArrayName="schools" *ngFor="let employee of data.schools().controls; let expindex=index">
+    <div [formGroupName]="expindex" class="row">
+      <label for="schoolname" class="col-md-6 col-sm-12 col-12">
+        schoolname:
+        <input class="form-control" type="text" formControlName="schoolname">
+      </label>
+
+      <label for="city" class="col-md-6 col-sm-12 col-12">
+        city:
+
+        <input class="form-control" type="text" formControlName="city">
+      </label>
+
+      <label for="start" class="col-md-6 col-sm-12 col-12">
+        starts in:
+
+        <input class="form-control" type="date" formControlName="start">
+      </label>
+
+      <label for="end" class="col-md-6 col-sm-12 col-12">
+        ends in:
+        <input class="form-control" type="date" formControlName="end">
+      </label>
+
+      <label for="field" class="col-md-6 col-sm-12 col-12">
+        field of study:
+
+        <input class="form-control" type="text" formControlName="field">
+      </label>
+      <label class="col-md-6 col-sm-12 col-12">
+        select a degree :
+        <input type="text" [matAutocomplete]="auto" name="data.filtervalue" formControlName="degree"
+          class="form-control">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let item of data.autocompletefilter()" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-autocomplete>
+      </label>
+      <label class="col-md-6 col-sm-12 col-12">
+
+      </label>
+
+    </div>
+
+  </div>
+  <button (click)=data.addschool()>add</button>
+
+  <button (click)=data.educationsubmit()>test</button>
+
+</form>

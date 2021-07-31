@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlldataService } from 'src/app/services/alldata.service';
 
 @Component({
   selector: 'app-simple',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleComponent implements OnInit {
 
-  constructor() { }
+  constructor(public data : AlldataService) { }
 
   ngOnInit(): void {
   }

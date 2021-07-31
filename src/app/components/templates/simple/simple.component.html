@@ -1,1 +1,137 @@
-<p>simple works!</p>
+<!-- <section class="template p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                           <h1> Your Name </h1>
+
+            </div>
+            <div class="col-md-6">
+                
+                <div class="col-md-12">
+                    <section class="template__contact">
+                        <p>your address</p>
+                        <p>your email</p>
+                        <p>your number</p>
+                        <p>your github</p>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ -->
+
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+<div class="container" id="forPrint">
+  <div class="header">
+    <div class="full-name">
+      <span class="first-name"> {{ this.data.personalData.value.fullname }} </span>
+    </div>
+    <div class="contact-info">
+      <span class="jobtitle">{{ this.data.personalData.value.jobtitle }} </span>
+    </div>
+
+    <div class="contact-info">
+      <span class="email" *ngIf="this.data.contact.value.email ">Email: </span>
+      <span class="email-val">{{ this.data.contact.value.email }}</span>
+      <span class="separator" *ngIf="this.data.contact.value.phone[0]"></span>
+      <span class="phone" *ngIf="this.data.contact.value.phone[0]">Phone: </span>
+      <span class="phone-val" *ngFor="let number of this.data.contact.value.phone"> {{number + ','}} </span>
+      <span class="separator" *ngIf="this.data.contact.value.github "></span>
+      <span class="phone" *ngIf="this.data.contact.value.github ">github: </span>
+      <span class="phone-val"> {{ this.data.contact.value.github }} </span>
+      <span class="separator" *ngIf="this.data.contact.value.linkedin "></span>
+      <span class="phone" *ngIf="this.data.contact.value.linkedin ">linkedin:  </span>
+      <span class="phone-val"> {{ this.data.contact.value.linkedin }} </span>
+    </div>
+  </div>
+  <div class="details">
+    <div class="section">
+      <div class="section__title">Experience</div>
+      <div class="section__list">
+        <div class="section__list-item">
+          <div class="exp-card " *ngFor="let item of this.data.experience.value.details  ; let expindex = index ">
+            <div class="name">{{item.company}}</div>
+            <div class="addr">{{item.address}}</div>
+            <div class="duration">{{item.start}} - {{item.end}}</div>
+            <h3 class="txt-label mb-0" >Job Description:</h3>
+            <ul *ngFor="let item of this.data.experience.value.details[expindex].descriptions  ; let test = index ">
+
+              <li *ngFor="let y of this.data.experience.value.details[expindex].descriptions[test] | keyvalue">
+                {{y.value}}
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="section">
+        <div class="section__title">Education</div>
+        <div class="section__list">
+          <div class="section__list-item">
+            <div class="exp-card" *ngFor="let school of this.data.education.value.schools">
+              <div class="name">{{school.schoolname}} - {{school.city}}</div>
+              <div class="addr">{{school.field}}</div>
+              <div class="addr">{{school.degree}}</div>
+              <div class="duration">{{school.start}} - {{school.end}}</div>
+            </div>
+           
+          </div>
+      
+        </div>
+
+      </div>
+      <div class="section">
+        <div class="section__title">Projects</div>
+        <div class="section__list">
+          <div class="section__list-item">
+            <div class="name">DSP</div>
+            <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js.
+              I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.
+            </div>
+          </div>
+
+          <div class="section__list-item">
+            <div class="name">DSP</div>
+            <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js.
+              I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a
+                href="/login">link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section__title">Skills</div>
+        <div class="skills">
+          <div class="skills__item">
+            <div class="skills__item__section">
+              <div class="name" *ngFor="let item of this.data.skill.value">
+                {{item}}
+              </div>
+            </div>
+          
+          </div>
+
+     
+
+      </div>
+      <div class="section">
+        <div class="section__title">
+          Interests
+        </div>
+        <div class="section__list">
+          <div class="skills__item__section">
+            <div class="name" *ngFor="let item of this.data.hoppy.value">
+              {{item}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

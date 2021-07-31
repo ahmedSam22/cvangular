@@ -71,9 +71,15 @@
             <div class="check--data__body">
                 <h3 class="text-center">Education </h3>
                 <div class="check--data__body__education">
-                    <ul>
-                        <li *ngFor="let item of this.data.education.value | keyvalue"> {{item.key}} : {{item.value}}
+                    <ul *ngFor="let item of this.data.education.value.schools  ; let expindex = index ">
+
+                        <li
+                            *ngFor="let y of this.data.education.value.schools[expindex] | keyvalue">
+                            {{y.key}} :
+                            {{y.value}}
                         </li>
+                       
+
                     </ul>
                 </div>
             </div>

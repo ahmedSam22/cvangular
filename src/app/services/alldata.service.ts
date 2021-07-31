@@ -116,17 +116,35 @@ export class AlldataService {
   degrees: any[] = ['Professional Certificate', 'Undergraduate Degrees', 'Bachelor Degree', 'Master Degree', 'Doctoral Degree'];
   filtervalue: any = ""
 
+  // education need to update
 
-  education = new FormGroup({
-    schoolname: new FormControl(""),
-    city: new FormControl(""),
-    degree: new FormControl(""),
-    field: new FormControl(""),
-    start: new FormControl(""),
-    end: new FormControl(""),
+  education = this.fb.group({
+    newschool() { },
+    schools: this.fb.array([
+      this.newschool()
+    ]),
   })
+  schools(): FormArray {
+    return this.education.get("schools") as FormArray
+  }
 
-
+  newschool(): FormGroup {
+    return this.fb.group({
+      schoolname: new FormControl(""),
+      city: new FormControl(""),
+      degree: new FormControl(""),
+      field: new FormControl(""),
+      start: new FormControl(""),
+      end: new FormControl(""),
+    })
+  }
+  addschool() {
+    this.schools().push(this.newschool());
+  }
+      educationsubmit(){
+        console.log(this.education.value.schools);
+        
+      }
   autocompletefilter() {
     var filtering = new RegExp(this.filtervalue, 'i');
     return this.degrees.filter(function (el) {
