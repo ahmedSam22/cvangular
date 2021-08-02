@@ -85,6 +85,22 @@
             </div>
             <!-- end  education -->
 
+             <!--  start Projects  -->
+             <div class="check--data__body" *ngIf="data.Projectsection">
+                <h3 class="text-center">Projects </h3>
+                <div class="check--data__body__projects">
+                    <ul>
+                        <li>
+                            <h3 class="mb-0">
+                                Projects
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.project.value">{{item}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end Projects  -->
+
             <!--  start skills  -->
             <div class="check--data__body">
                 <h3 class="text-center">Skills </h3>

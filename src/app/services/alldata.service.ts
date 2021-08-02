@@ -235,6 +235,31 @@ export class AlldataService {
   /*  -------- end courses & hoppies ----------*/
 
 
+  /*  -------- end projects ----------*/
+
+  projects = this.fb.group({
+    project: this.fb.array([
+      this.fb.control("")
+    ])
+
+  })
+  Projectsection:boolean=false;
+
+  get project() {
+    return this.projects.get("project") as FormArray
+  }
+
+
+  addProject() {
+    this.project.push(this.fb.control(""))
+  }
+  removeProject(projectindex: number) {
+    this.project.removeAt(projectindex);
+  }
+
+
+  /*  -------- end projects ----------*/
+
 
 
 

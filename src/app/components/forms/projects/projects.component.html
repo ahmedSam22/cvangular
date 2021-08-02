@@ -1,0 +1,11 @@
+<div action="" [formGroup]="data.projects">
+    <form formArrayName="project" >
+        <label *ngFor="let item of data.project.controls; let projectindex=index" class="col-md-12 col-sm-12 col-12 my-2" >
+            project  {{projectindex}}
+            <input type="text" class="form-control" formControlName="project" [formControlName]="projectindex">
+            <button class="btn" (click)="data.removeProject(projectindex)">remove</button>
+    
+        </label>
+    </form>
+        <button class="btn" (click)="data.addProject()">add</button>
+    </div>

@@ -21,6 +21,7 @@ import { CoursesComponent } from './components/forms/courses/courses.component';
 import { CheckdataComponent } from './components/pages/checkdata/checkdata.component';
 import { NgPipesModule } from 'ngx-pipes';
 import { SimpleComponent } from './components/templates/simple/simple.component';
+import { ProjectsComponent } from './components/forms/projects/projects.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { SimpleComponent } from './components/templates/simple/simple.component'
     CoursesComponent,
     CheckdataComponent,
     SimpleComponent,
+    ProjectsComponent,
   ],
   imports: [
     FormsModule,
