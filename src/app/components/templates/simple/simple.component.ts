@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AlldataService } from 'src/app/services/alldata.service';
+import { jsPDF } from "jspdf";
 
 @Component({
   selector: 'app-simple',
@@ -13,4 +14,28 @@ export class SimpleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @ViewChild('forPrint', { static: true })
+
+
+
+  
+   pdf = new jsPDF('p','pt','a4');
+
+
+  print(){
+   const forprint:any = document.getElementById("forPrint")
+
+   const doc = new jsPDF({
+    orientation: "p",
+    unit: "px",
+    format: [1024, 700]
+  });
+  doc.html(forprint, {
+     callback: (doc) => {
+       doc.save("Resume");
+     }
+  });
+  
+  }
+  
 }
