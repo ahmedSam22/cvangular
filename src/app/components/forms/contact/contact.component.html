@@ -2,25 +2,25 @@
     <form action="submit" [formGroup]="data.contact">
         <div class="row">
             <label for="email" class="col-md-6 col-sm-12 col-12">
-                email :
+                email : <span *ngIf="email.invalid && email.touched">email   is required</span>
                 <input type="text" formControlName="email" class="form-control">
             </label>
             <label for="github" class="col-md-6 col-sm-12 col-12">
-                github :
+                github : optional
                 <input type="text" formControlName="github" class="form-control">
             </label>
             <label for="linkedin" class="col-md-6 col-sm-12 col-12">
-                linkedin :
+                linkedin : optional
                 <input type="text" formControlName="linkedin" class="form-control">
             </label>
         </div>
 
         <form formArrayName="phone">
             <div class="row">
-                <label for="item-{{i}}" *ngFor="let item of data.phone.controls;let i=index"
+                <label for="item" 
                     class="col-md-6 col-sm-12 col-12">
-                    phone-{{i + 1}}:
-                    <input type="text" formControlName="phone" [formControlName]="i" class="form-control">
+                    phone : <span *ngIf="phone.invalid && phone.touched">phone   is required</span>
+                    <input type="text" formControlName="phone"*ngFor="let item of data.phone.controls;let i=index" [formControlName]="i" class="form-control">
                 </label>
             </div>
         </form>

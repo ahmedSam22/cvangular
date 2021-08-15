@@ -4,3 +4,7 @@ mat-horizontal-stepper{
     margin: 20px 0 20px 0;
     border-radius: 2%;
 }
+
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}

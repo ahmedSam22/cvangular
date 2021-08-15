@@ -1,25 +1,27 @@
 <div class="container">
-    <form action="submit" [formGroup]="data.personalData" class="form">
+    <form action="submit" [formGroup]="data.personalData" class="form" aria-disabled="data.personalData.!valid" >
         <h3>Basic information </h3>
         <div class="row">
             <label for="fullname" class="form__label  col-md-6 col-sm-12 col-12">
-                Full name :
-                <input type="text" formControlName="fullname" class="form-control ">
+                Full name : <span *ngIf="fullname.invalid && fullname.touched">username is required</span>
 
+                <input type="text" formControlName="fullname" class="form-control" aria-required="true">
             </label>
+
             <label for="birthDay" class="form__label  col-md-6 col-sm-12 col-12">
-                birthday :
-                <input type="text" formControlName="birthDay" class="form-control">
+                birthday : optional
+                <input type="date" formControlName="birthDay" class="form-control">
             </label>
             <label for="jobtitle" class="form__label  col-md-6 col-sm-12 col-12">
-                Job Title :
+                Job Title : <span *ngIf="jobtitle.invalid && jobtitle.touched">job title is required</span>
                 <input type="text" formControlName="jobtitle" class="form-control">
             </label>
         </div>
         <form formArrayName="address" class="inside--form">
-            <h3>Adresses</h3>
             <div class="row">
                 <label for="street" class=" inside--form__label col-md-6 col-sm-12 col-12">
+                    Address :  <span *ngIf="address.invalid && address.touched">address is required</span>
+
                     <input type="text" *ngFor="let item of data.address.controls;let i=index" formControlName="street"
                         class="form-control mb-2" [formControlName]="i">
                     <button class="btn btn-warning mt-2" (click)="data.addaddress()">add new address</button>

@@ -15,4 +15,11 @@ export class ContactComponent implements OnInit {
   submit(){
     console.log(this.data.contact.value)
   }
+
+  get email():any{
+    return this.data.contact.get("email")
+  }
+  get phone():any{
+    return this.data.contact.get("phone")
+  }
 }

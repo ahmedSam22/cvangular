@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup , FormArray } from '@angular/forms';
 import { AlldataService } from 'src/app/services/alldata.service';
 
 
@@ -17,5 +16,14 @@ export class PersonalComponent implements OnInit {
   }
 submit(){
   console.log(this.data.personalData.controls)
+}
+get fullname():any{
+  return this.data.personalData.get("fullname")
+}
+get jobtitle():any{
+  return this.data.personalData.get("jobtitle")
+}
+get address():any{
+  return this.data.personalData.get("address")
 }
 }

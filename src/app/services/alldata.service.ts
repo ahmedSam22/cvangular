@@ -10,11 +10,17 @@ export class AlldataService {
   }
   /*  -------- personal information ----------*/
   personalData = new FormGroup({
-    fullname: new FormControl(""),
+    fullname: new FormControl("", [Validators.required,
+    Validators.minLength(5),
+    ]),
     birthDay: new FormControl(""),
-    jobtitle: new FormControl(""),
+    jobtitle: new FormControl("", [Validators.required,
+    Validators.minLength(3),
+    ]),
     address: this.fb.array([
-      this.fb.control("")
+      this.fb.control("", [Validators.required,
+      Validators.minLength(5),
+      ])
     ])
   })
 
@@ -23,18 +29,25 @@ export class AlldataService {
   }
 
   addaddress() {
-    this.address.push(this.fb.control(""))
+    this.address.push(this.fb.control("", [Validators.required,
+    Validators.minLength(5),
+    ]))
   }
   /*  -------- personal information ----------*/
 
   /*  -------- contact ----------*/
 
   contact = new FormGroup({
-    email: new FormControl("", Validators.required),
+    email: new FormControl("", [Validators.required,
+    Validators.email]),
     github: new FormControl(""),
     linkedin: new FormControl(""),
     phone: this.fb.array([
-      this.fb.control("")
+      this.fb.control("", [Validators.required,
+      Validators.pattern('[0-9]*'),
+      Validators.minLength(11),
+
+      ])
     ])
   })
 
@@ -42,7 +55,11 @@ export class AlldataService {
     return this.contact.get("phone") as FormArray
   }
   addphone() {
-    this.phone.push(this.fb.control(""))
+    this.phone.push(this.fb.control("", [Validators.required,
+    Validators.pattern('[0-9]*'),
+    Validators.minLength(11),
+
+    ]))
   }
 
 
@@ -69,10 +86,12 @@ export class AlldataService {
 
   newexp(): FormGroup {
     return this.fb.group({
-      company: '',
-      location: '',
-      start: '',
-      end: '',
+      company: new FormControl("", [Validators.required,
+      Validators.minLength(5),
+      ]),
+      location: new FormControl(""),
+      start: new FormControl(""),
+      end: new FormControl(""),
       descriptions: this.fb.array([
         this.newdescription()
       ])
@@ -93,7 +112,7 @@ export class AlldataService {
 
   newdescription(): FormGroup {
     return this.fb.group({
-      description: '',
+      description: new FormControl(""),
     })
   }
 
@@ -141,10 +160,10 @@ export class AlldataService {
   addschool() {
     this.schools().push(this.newschool());
   }
-      educationsubmit(){
-        console.log(this.education.value.schools);
-        
-      }
+  educationsubmit() {
+    console.log(this.education.value.schools);
+
+  }
   autocompletefilter() {
     var filtering = new RegExp(this.filtervalue, 'i');
     return this.degrees.filter(function (el) {
@@ -243,7 +262,7 @@ export class AlldataService {
     ])
 
   })
-  Projectsection:boolean=false;
+  Projectsection: boolean = false;
 
   get project() {
     return this.projects.get("project") as FormArray

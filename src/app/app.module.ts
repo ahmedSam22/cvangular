@@ -26,6 +26,7 @@ import { ProjectsComponent } from './components/forms/projects/projects.componen
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     HomeComponent,
     PersonalComponent,

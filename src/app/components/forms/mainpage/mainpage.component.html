@@ -1,20 +1,19 @@
 <div class="container">
     <mat-horizontal-stepper>
 
-        <mat-step label="Personal data">
+        <mat-step label="Personal data" [completed]="data.personalData.valid">
             <app-personal></app-personal>
-            <button mat-button matStepperNext>next</button>
+            <button [disabled]="!data.personalData.valid"  mat-button matStepperNext >next</button>
         </mat-step>
-        <mat-step label="CONTACT">
+        <mat-step label="CONTACT" >
             <app-contact></app-contact>
             <button mat-button matStepperPrevious>prev</button>
-            <button mat-button matStepperNext>next</button>
+            <button [disabled]="!data.contact.valid" mat-button matStepperNext >next</button>
         </mat-step>
         <mat-step label="EXPERIENCE">
             <app-experience></app-experience>
             <button mat-button matStepperPrevious>prev</button>
             <button mat-button matStepperNext>next</button>
-
         </mat-step>
         <mat-step label="Education">
             <app-education></app-education>
@@ -37,9 +36,8 @@
         <mat-step label="courses">
             <app-courses></app-courses>
             <button mat-button matStepperPrevious>prev</button>
-          
-            <button routerLink="/review" class="btn btn-success col-12"> ckeck  </button>
 
+            <button routerLink="/review" class="btn btn-success col-12"> ckeck </button>
         </mat-step>
     </mat-horizontal-stepper>
 </div>

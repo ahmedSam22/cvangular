@@ -11,8 +11,11 @@ export class ExperienceComponent implements OnInit {
   constructor(public data :AlldataService) { }
 
   ngOnInit(): void {
+
   }
 submit(){
   console.log()
 }
+
+
 }
