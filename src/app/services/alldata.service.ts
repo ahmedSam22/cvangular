@@ -307,7 +307,21 @@ export class AlldataService {
 
   /*  -------- end projects ----------*/
 
+  /*  -------- Start Login ----------*/
 
+  login = new FormGroup({
+    username: new FormControl("", [Validators.required,
+    Validators.minLength(5),
+    ]),
+    password: new FormControl("", [Validators.required,
+      Validators.minLength(5),
+
+      ]),   
+  })
+
+
+
+  /*  -------- end Login ----------*/
 
 
 }

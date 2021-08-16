@@ -22,6 +22,8 @@ import { CheckdataComponent } from './components/pages/checkdata/checkdata.compo
 import { NgPipesModule } from 'ngx-pipes';
 import { SimpleComponent } from './components/templates/simple/simple.component';
 import { ProjectsComponent } from './components/forms/projects/projects.component';
+import { SignupComponent } from './components/signup-login/signup/signup.component';
+import { LoginComponent } from './components/signup-login/login/login.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { ProjectsComponent } from './components/forms/projects/projects.componen
     CheckdataComponent,
     SimpleComponent,
     ProjectsComponent,
+    SignupComponent,
+    LoginComponent,
   ],
   imports: [
     FormsModule,
