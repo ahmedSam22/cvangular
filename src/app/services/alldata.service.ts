@@ -196,7 +196,9 @@ export class AlldataService {
 
   skills = this.fb.group({
     skill: this.fb.array([
-      this.fb.control("")
+      this.fb.control("", [Validators.required,
+        Validators.minLength(3),
+        ])
     ])
 
   })
@@ -207,7 +209,9 @@ export class AlldataService {
 
 
   addSkills() {
-    this.skill.push(this.fb.control(""))
+    this.skill.push(this.fb.control("", [Validators.required,
+      Validators.minLength(3),
+      ]))
   }
   removeSkill(skillindex: number) {
     this.skill.removeAt(skillindex);

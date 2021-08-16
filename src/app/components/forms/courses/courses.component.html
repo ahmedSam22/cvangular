@@ -1,10 +1,13 @@
 <div action="" [formGroup]="data.courses">
     <form formArrayName="course" >
-        <label *ngFor="let item of data.course.controls; let courseSkill=index" class="col-md-12 col-sm-12 col-12 my-2" >
-            Course  {{courseSkill}}
-            <input type="text" class="form-control" formControlName="course" [formControlName]="courseSkill">
+        <label class="col-md-12 col-sm-12 col-12 my-2" >
+            Course  
+            <div *ngFor="let item of data.course.controls; let courseSkill=index" >
+<input  type="text" class="form-control" formControlName="course" [formControlName]="courseSkill">
             <button class="btn" (click)="data.removeCourse(courseSkill)">remove</button>
     
+            </div>
+            
         </label>
     </form>
         <button class="btn" (click)="submit()">test</button>
@@ -15,11 +18,14 @@
 
     <div action="" [formGroup]="data.hoppies">
         <form formArrayName="hoppy" >
-            <label *ngFor="let item of data.hoppy.controls; let hoppyindex=index" class="col-md-12 col-sm-12 col-12 my-2" >
-                Hoppy  {{hoppyindex}}
-                <input type="text" class="form-control" formControlName="course" [formControlName]="hoppyindex">
+            <label  class="col-md-12 col-sm-12 col-12 my-2" >
+                Hoppy 
+                <div *ngFor="let item of data.hoppy.controls; let hoppyindex=index">
+                    <input type="text" class="form-control" formControlName="course" [formControlName]="hoppyindex">
                 <button class="btn" (click)="data.removeHoppy(hoppyindex)">remove</button>
         
+                </div>
+                
             </label>
         </form>
             <button class="btn" (click)="submit()">test</button>
