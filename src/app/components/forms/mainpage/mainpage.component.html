@@ -13,31 +13,31 @@
         <mat-step label="EXPERIENCE">
             <app-experience></app-experience>
             <button mat-button matStepperPrevious>prev</button>
-            <button mat-button matStepperNext>next</button>
+            <button [disabled]="!data.experience.valid" mat-button matStepperNext>next</button>
         </mat-step>
         <mat-step label="Education">
             <app-education></app-education>
             <button mat-button matStepperPrevious>prev</button>
-            <button mat-button matStepperNext>next</button>
+            <button [disabled]="!data.education.valid" mat-button matStepperNext>next</button>
 
         </mat-step>
         <mat-step label="Projects" *ngIf="data.Projectsection">
             <app-projects></app-projects>
             <button mat-button matStepperPrevious>prev</button>
-            <button mat-button matStepperNext>next</button>
+            <button [disabled]="!data.projects.valid" mat-button matStepperNext>next</button>
 
         </mat-step>
         <mat-step label="skills">
             <app-skills></app-skills>
             <button mat-button matStepperPrevious>prev</button>
-            <button mat-button matStepperNext>next</button>
+            <button [disabled]="!data.skills.valid" mat-button matStepperNext>next</button>
 
         </mat-step>
         <mat-step label="courses">
             <app-courses></app-courses>
             <button mat-button matStepperPrevious>prev</button>
 
-            <button routerLink="/review" class="btn btn-success col-12"> ckeck </button>
+            <button [disabled]="!data.hoppies.valid || !data.courses.valid" routerLink="/review" class="btn btn-success col-12"> ckeck </button>
         </mat-step>
     </mat-horizontal-stepper>
 </div>

@@ -89,7 +89,9 @@ export class AlldataService {
       company: new FormControl("", [Validators.required,
       Validators.minLength(5),
       ]),
-      location: new FormControl(""),
+      location: new FormControl("", [Validators.required,
+        Validators.minLength(5),
+        ]),
       start: new FormControl(""),
       end: new FormControl(""),
       descriptions: this.fb.array([
@@ -112,7 +114,9 @@ export class AlldataService {
 
   newdescription(): FormGroup {
     return this.fb.group({
-      description: new FormControl(""),
+      description: new FormControl("", [Validators.required,
+        Validators.minLength(5),
+        ]),
     })
   }
 
@@ -149,10 +153,18 @@ export class AlldataService {
 
   newschool(): FormGroup {
     return this.fb.group({
-      schoolname: new FormControl(""),
-      city: new FormControl(""),
-      degree: new FormControl(""),
-      field: new FormControl(""),
+      schoolname: new FormControl("", [Validators.required,
+        Validators.minLength(5),
+        ]),
+      city: new FormControl("", [Validators.required,
+        Validators.minLength(5),
+        ]),
+      degree: new FormControl("", [Validators.required,
+        Validators.minLength(5),
+        ]),
+      field: new FormControl("", [Validators.required,
+        Validators.minLength(5),
+        ]),
       start: new FormControl(""),
       end: new FormControl(""),
     })
@@ -210,7 +222,9 @@ export class AlldataService {
 
   courses = this.fb.group({
     course: this.fb.array([
-      this.fb.control("")
+      this.fb.control("", [Validators.required,
+        Validators.minLength(5),
+        ])
     ])
 
   })
@@ -221,7 +235,9 @@ export class AlldataService {
 
 
   addCourse() {
-    this.course.push(this.fb.control(""))
+    this.course.push(this.fb.control("", [Validators.required,
+      Validators.minLength(5),
+      ]))
   }
   removeCourse(courseIndex: number) {
     this.course.removeAt(courseIndex);
@@ -231,7 +247,9 @@ export class AlldataService {
 
   hoppies = this.fb.group({
     hoppy: this.fb.array([
-      this.fb.control("")
+      this.fb.control("", [Validators.required,
+        Validators.minLength(5),
+        ])
     ])
 
   })
@@ -242,7 +260,9 @@ export class AlldataService {
 
 
   addHoppy() {
-    this.hoppy.push(this.fb.control(""))
+    this.hoppy.push(this.fb.control("", [Validators.required,
+      Validators.minLength(5),
+      ]))
   }
   removeHoppy(hoppyindex: number) {
     this.hoppy.removeAt(hoppyindex);
@@ -258,7 +278,9 @@ export class AlldataService {
 
   projects = this.fb.group({
     project: this.fb.array([
-      this.fb.control("")
+      this.fb.control("", [Validators.required,
+        Validators.minLength(5),
+        ])
     ])
 
   })
@@ -270,7 +292,9 @@ export class AlldataService {
 
 
   addProject() {
-    this.project.push(this.fb.control(""))
+    this.project.push(this.fb.control("", [Validators.required,
+      Validators.minLength(5),
+      ]))
   }
   removeProject(projectindex: number) {
     this.project.removeAt(projectindex);
