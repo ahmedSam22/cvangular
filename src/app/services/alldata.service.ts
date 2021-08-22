@@ -61,6 +61,10 @@ export class AlldataService {
 
     ]))
   }
+  tesst(){
+    console.log(this.contact.value["phone"].FormControl);
+    
+  }
 
 
   submit() {
