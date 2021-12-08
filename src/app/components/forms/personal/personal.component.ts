@@ -26,4 +26,7 @@ get jobtitle():any{
 get address():any{
   return this.data.personalData.get("address")
 }
+get phone():any{
+  return this.data.personalData.get("phone")
+}
 }

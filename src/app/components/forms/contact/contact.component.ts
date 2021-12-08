@@ -19,7 +19,5 @@ export class ContactComponent implements OnInit {
   get email():any{
     return this.data.contact.get("email")
   }
-  get phone():any{
-    return this.data.contact.get("phone")
-  }
+  
 }

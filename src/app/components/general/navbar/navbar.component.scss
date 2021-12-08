@@ -1,13 +1,11 @@
 .header{
     background-color: inherit;
-    color: white;
-    align-items: baseline;
-    padding: 10px;
+    align-items: center;
+    // padding: 40px 0px;
    
 margin-bottom: 10px;
-    a{
-        color: white;
-        font-size: 16px;
+    button:first-child{
+        
         text-decoration: none;
     }
 }

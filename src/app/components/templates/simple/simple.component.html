@@ -39,9 +39,9 @@
     <div class="contact-info">
       <span class="email" *ngIf="this.data.contact.value.email ">Email: </span>
       <span class="email-val">{{ this.data.contact.value.email }}</span>
-      <span class="separator" *ngIf="this.data.contact.value.phone[0]"></span>
-      <span class="phone" *ngIf="this.data.contact.value.phone[0]">Phone: </span>
-      <span class="phone-val" *ngFor="let number of this.data.contact.value.phone"> {{number + ','}} </span>
+      <span class="separator" *ngIf="this.data.personalData.value.phone[0]"></span>
+      <span class="phone" *ngIf="this.data.personalData.value.phone[0]">Phone: </span>
+      <span class="phone-val" *ngFor="let number of this.data.personalData.value.phone"> {{number + ','}} </span>
       <span class="separator" *ngIf="this.data.contact.value.github "></span>
       <span class="phone" *ngIf="this.data.contact.value.github ">github: </span>
       <span class="phone-val"> {{ this.data.contact.value.github }} </span>

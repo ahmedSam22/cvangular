@@ -21,6 +21,13 @@ export class AlldataService {
       this.fb.control("", [Validators.required,
       Validators.minLength(5),
       ])
+    ]),
+    phone: this.fb.array([
+      this.fb.control("", [Validators.required,
+      Validators.pattern('[0-9]*'),
+      Validators.minLength(11),
+
+      ])
     ])
   })
 
@@ -32,6 +39,24 @@ export class AlldataService {
     this.address.push(this.fb.control("", [Validators.required,
     Validators.minLength(5),
     ]))
+
+    
+  }
+
+
+  get phone() {
+    return this.personalData.get("phone") as FormArray
+  }
+  addphone() {
+    this.phone.push(this.fb.control("", [Validators.required,
+    Validators.pattern('[0-9]*'),
+    Validators.minLength(11),
+
+    ]))
+  }
+  tesst(){
+    console.log(this.personalData.value["phone"].FormControl);
+    
   }
   /*  -------- personal information ----------*/
 
@@ -42,29 +67,10 @@ export class AlldataService {
     Validators.email]),
     github: new FormControl(""),
     linkedin: new FormControl(""),
-    phone: this.fb.array([
-      this.fb.control("", [Validators.required,
-      Validators.pattern('[0-9]*'),
-      Validators.minLength(11),
-
-      ])
-    ])
+    
   })
 
-  get phone() {
-    return this.contact.get("phone") as FormArray
-  }
-  addphone() {
-    this.phone.push(this.fb.control("", [Validators.required,
-    Validators.pattern('[0-9]*'),
-    Validators.minLength(11),
-
-    ]))
-  }
-  tesst(){
-    console.log(this.contact.value["phone"].FormControl);
-    
-  }
+  
 
 
   submit() {
