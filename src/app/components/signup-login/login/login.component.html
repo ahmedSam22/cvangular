@@ -1,0 +1,11 @@
+<p>login works!</p>
+<form action="login" [formGroup]="data.login">
+    <label for="username" class="form__label  col-md-6 col-sm-12 col-12">
+        <input type="text" class="form-control" formControlName="username">
+    </label>
+    <label for="username" class="form__label  col-md-6 col-sm-12 col-12">
+        <input type="text" class="form-control" formControlName="password">
+    </label>
+</form>
+
+<button (click)="login()">login</button>

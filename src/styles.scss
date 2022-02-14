@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(icofont/icofont.min.css);
+/*@import '../node_modules/font-size-sass//dist/css/fontSize.css';*/
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+input.ng-invalid{
+    border-left: 5px solid red;
+}
+input.ng-touched{
+    border-left: 5px solid red;
+}
+input.ng-valid{
+    border-left: 5px solid green;
+}

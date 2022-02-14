@@ -1,0 +1,55 @@
+//  .form{
+//     height: max-content;
+//     display: flex;
+//     flex-wrap: wrap;
+//     @media (max-width : 768px) {
+        
+        
+//     }
+//     .inside--form{
+//         display: flex;
+//         border: 1px solid gray;
+//         padding: 5px;
+//         margin-top: 5px;
+//         margin-bottom: 5px;
+//         flex-direction: column;
+//         &__label{
+//         height: max-content;
+//         display: flex;
+//         flex-wrap: nowrap;
+//         align-content: center;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: baseline;
+//         }
+
+//     }
+//     &__label{
+//         height: max-content;
+//         display: flex;
+//         flex-wrap: nowrap;
+//         align-content: center;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: baseline;
+//         @media (min-width : 400px) {
+//             margin-bottom: 5px;
+//             width: 100%;
+//         }
+//         @media (min-width : 768px) {
+          
+//         }
+//     }
+// }
+
+
+.forImage{
+    &__bg{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &__img{
+        z-index: 1;
+    }
+}

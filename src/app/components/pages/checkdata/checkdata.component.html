@@ -1,0 +1,156 @@
+<section class="check--data">
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">
+                Data Review </h1>
+            <hr>
+
+            <!-- start personal data  -->
+
+            <div class="check--data__body">
+                <h3 class="text-center">personalData</h3>
+
+                <div class="check--data__body__personaldata">
+                    <ul>
+                        <li *ngFor="let item of this.data.personalData.value | keyvalue"> {{item.key}} : {{item.value}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- end personal data  -->
+
+
+            <!-- start contact -->
+
+            <div class="check--data__body" >
+                <h3 class="text-center">contact </h3>
+                <div class="check--data__body__contact">
+                    <ul>
+                        <li *ngFor="let item of this.data.contact.value | keyvalue"> {{item.key}} : {{item.value}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end contact -->
+
+            <!-- start experience -->
+
+
+            <div class="check--data__body">
+                <h3 class="text-center">Experience </h3>
+                <div class="check--data__body__exp">
+                    <ul *ngFor="let item of this.data.experience.value.details  ; let expindex = index ">
+
+                        <li
+                            *ngFor="let y of this.data.experience.value.details[expindex] | omit: 'descriptions'| keyvalue">
+                            {{y.key}} :
+                            {{y.value}}
+                        </li>
+                        <li>
+                            <h3 class="mb-0"> descriptions </h3>
+                        </li>
+                        <ul
+                            *ngFor="let item of this.data.experience.value.details[expindex].descriptions  ; let test = index ">
+
+                            <li
+                                *ngFor="let y of this.data.experience.value.details[expindex].descriptions[test] | keyvalue">
+                                {{y.value}}
+                            </li>
+                        </ul>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- end experience -->
+
+
+            <!-- start education -->
+
+
+            <div class="check--data__body">
+                <h3 class="text-center">Education </h3>
+                <div class="check--data__body__education">
+                    <ul *ngFor="let item of this.data.education.value.schools  ; let expindex = index ">
+
+                        <li
+                            *ngFor="let y of this.data.education.value.schools[expindex] | keyvalue">
+                            {{y.key}} :
+                            {{y.value}}
+                        </li>
+                       
+
+                    </ul>
+                </div>
+            </div>
+            <!-- end  education -->
+
+             <!--  start Projects  -->
+             <div class="check--data__body" *ngIf="data.Projectsection">
+                <h3 class="text-center">Projects </h3>
+                <div class="check--data__body__projects">
+                    <ul>
+                        <li>
+                            <h3 class="mb-0">
+                                Projects
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.project.value">{{item}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end Projects  -->
+
+            <!--  start skills  -->
+            <div class="check--data__body">
+                <h3 class="text-center">Skills </h3>
+                <div class="check--data__body__skills">
+                    <ul>
+                        <li>
+                            <h3 class="mb-0">
+                                Skills
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.skill.value">{{item}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end skills  -->
+
+            <!--  start courses  -->
+            <div class="check--data__body">
+                <h3 class="text-center">courses </h3>
+                <div class="check--data__body__courses">
+                    <ul>
+                        <li>
+                            <h3 class="mb-0">
+                                Courses
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.course.value">{{item}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end courses  -->
+
+            <!--  start Hoppies  -->
+            <div class="check--data__body">
+                <h3 class="text-center">Hoppies </h3>
+                <div class="check--data__body__hoppies">
+                    <ul>
+                        <li>
+                            <h3 class="mb-0">
+                                Hoppies
+                            </h3>
+                        </li>
+                        <li *ngFor="let item of this.data.hoppy.value">{{item}} </li>
+                    </ul>
+                </div>
+            </div>
+            <!--  end Hoppies  -->
+
+        </div>
+
+        <button routerLink="/template1">final check</button>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="">
+    <form action="submit" [formGroup]="data.contact">
+        <div class="row">
+            <label for="email" class="col-md-6 col-sm-12 col-12">
+                email : <span *ngIf="email.invalid && email.touched">email   is required</span>
+                <input type="email" formControlName="email" class="form-control">
+            </label>
+            <label for="github" class="col-md-6 col-sm-12 col-12">
+                github : optional
+                <input type="text" formControlName="github" class="form-control">
+            </label>
+            <label for="linkedin" class="col-md-6 col-sm-12 col-12">
+                linkedin : optional
+                <input type="text" formControlName="linkedin" class="form-control">
+            </label>
+        </div>
+
+        
+        <button class="btn btn-warning my-3" (click)="data.tesst()">test</button>
+
+
+    </form>
+</div>
